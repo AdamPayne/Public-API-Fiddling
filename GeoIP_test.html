@@ -4,26 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-
-    <!--<link rel="stylesheet" href="">-->
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
 
 <body onload="initialize()">
     <h1>City:</h1>
     <p id="demo"></p>
+        <p id="demo"></p>
 
 
     <script type="text/javascript">
         var geocoder;
-
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
         }
@@ -40,13 +31,9 @@
 
         function initialize() {
             geocoder = new google.maps.Geocoder();
-
-
-
         }
 
         function codeLatLng(lat, lng) {
-
             var latlng = new google.maps.LatLng(lat, lng);
             geocoder.geocode({ 'latLng': latlng }, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
